@@ -1,0 +1,49 @@
+﻿@model MVCLesson_8.Services.Manager
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Имя
+            </th>
+            <th>
+               Фаилия
+            </th>
+            <th>
+               Возраст
+            </th>
+            <th>
+               Должность
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ListEmpl) {
+        <tr>
+            <td>
+                item.Name
+            </td>
+            <td>
+                item.Famaly
+            </td>
+            <td>
+                item.Age
+            </td>
+            <td>
+                item.Post
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>

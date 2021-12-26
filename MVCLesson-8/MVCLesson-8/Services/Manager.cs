@@ -9,6 +9,10 @@ namespace MVCLesson_8.Services
     public class Manager : IServices
     {
         public List<Employee> ListEmpl { get; set; }
+        public Manager()
+        {
+            ListEmpl = new List<Employee>();
+        }
         public void Add(Employee employee)
         {
             ListEmpl.Add(employee);

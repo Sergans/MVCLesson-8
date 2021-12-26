@@ -29,9 +29,20 @@ namespace MVCLesson_8.Controllers
         {
             return View();
         }
+        public IActionResult Get()
+        {
+            var ls = _manager.ListEmpl;
+            return View(ls);
+        }
         public IActionResult Create()
         {
-           
+            
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Employee model)
+        {
+            _manager.ListEmpl.Add(model);
             return View();
         }
 
