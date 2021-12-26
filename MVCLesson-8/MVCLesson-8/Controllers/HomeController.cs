@@ -29,11 +29,11 @@ namespace MVCLesson_8.Controllers
         {
             return View();
         }
-        //public IActionResult Create(Employee employee)
-        //{
-        //    _manager.Add(employee);
-        //    return View(employee);
-        //}
+        public IActionResult Create()
+        {
+           
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
