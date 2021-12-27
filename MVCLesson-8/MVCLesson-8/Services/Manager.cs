@@ -8,19 +8,29 @@ namespace MVCLesson_8.Services
 {
     public class Manager : IServices
     {
-        public List<Employee> ListEmpl { get; set; }
-        public Manager()
+        private readonly ListEmployee _employees;
+        //public List<Employee> ListEmpl { get; set; }
+        public Manager(ListEmployee employees)
         {
-            ListEmpl = new List<Employee>();
+            _employees = employees;
         }
         public void Add(Employee employee)
         {
-            ListEmpl.Add(employee);
+            _employees.ListEmpl.Add(employee);
         }
 
-        public List<Employee> Get()
+        public void Delete(Employee employee)
         {
-            return ListEmpl;
+            _employees.ListEmpl.Remove(employee);
+        }
+        public Employee GetFamaly(int Famaly)
+        {
+            _employees.ListEmpl.
+        }
+
+        public List<Employee> GetAll()
+        {
+            return _employees.ListEmpl;
         }
     }
 }

@@ -26,8 +26,8 @@ namespace MVCLesson_8
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSingleton<Manager>();
-           // services.AddScoped<Employee>();
+            services.AddSingleton<ListEmployee>();
+            services.AddScoped<Manager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

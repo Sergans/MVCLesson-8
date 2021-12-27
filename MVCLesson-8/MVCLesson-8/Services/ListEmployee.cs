@@ -4,12 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using MVCLesson_8.Models;
 
+
 namespace MVCLesson_8.Services
 {
-   public interface IServices
+    public class ListEmployee
     {
-        void Add(Employee employee);
-        List<Employee>GetAll();
-        void Delete(Employee employee);
+        public List<Employee> ListEmpl = new List<Employee>();
+       
     }
 }
