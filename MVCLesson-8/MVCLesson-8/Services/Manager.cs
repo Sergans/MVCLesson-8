@@ -23,9 +23,9 @@ namespace MVCLesson_8.Services
         {
             _employees.ListEmpl.Remove(employee);
         }
-        public Employee GetFamaly(int Famaly)
+        public Employee GetFamaly(Employee employee)
         {
-            _employees.ListEmpl.
+            
         }
 
         public List<Employee> GetAll()

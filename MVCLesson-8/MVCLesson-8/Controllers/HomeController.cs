@@ -51,7 +51,7 @@ namespace MVCLesson_8.Controllers
         }
         public IActionResult Delete(ViewEmployee model)
         {
-            var a = new ViewEmployee { Name = "xck", Age = 65, Famaly = "cdcc", Post = "cccc" };
+           
             return View(model);
         }
         [HttpPost]
