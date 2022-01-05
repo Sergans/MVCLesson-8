@@ -25,7 +25,7 @@ namespace MVCLesson_8.Services
         }
         public Employee GetFamaly(Employee employee)
         {
-            
+            return employee;
         }
 
         public List<Employee> GetAll()
