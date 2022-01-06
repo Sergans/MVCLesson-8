@@ -3,25 +3,31 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MVCLesson_8.Data;
 
 namespace MVCLesson_8.Services
 {
     public class Manager : IServices
     {
+       
         private readonly ListEmployee _employees;
-        //public List<Employee> ListEmpl { get; set; }
-        public Manager(ListEmployee employees)
+        private readonly DataBase _database;
+        
+        public Manager(DataBase dataBase)
         {
-            _employees = employees;
+            _database = dataBase;
         }
         public void Add(Employee employee)
         {
-            _employees.ListEmpl.Add(employee);
+            _database.Add(employee);
+            _database.SaveChanges();
         }
-
-        public void Delete(Employee employee)
+        
+        public void Delete(int id)
         {
-            _employees.ListEmpl.Remove(employee);
+            var employee=GetById(id);
+            _database.Remove(employee);
+            _database.SaveChanges();
         }
         public Employee GetFamaly(Employee employee)
         {
@@ -30,7 +36,21 @@ namespace MVCLesson_8.Services
 
         public List<Employee> GetAll()
         {
-            return _employees.ListEmpl;
+            
+            return _database.Employees.ToList();
+        }
+
+        public Employee GetById(int id)
+        {
+            var employees = GetAll();
+            foreach(Employee employee in employees)
+            {
+                if(employee.Id == id)
+                {
+                    return employee;
+                }
+            }
+            return null;
         }
     }
 }

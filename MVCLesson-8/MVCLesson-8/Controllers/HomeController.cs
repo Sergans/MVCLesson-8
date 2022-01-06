@@ -49,16 +49,27 @@ namespace MVCLesson_8.Controllers
         {
             return View();
         }
-        public IActionResult Delete(ViewEmployee model)
+        public IActionResult Delete(int id)
         {
-           
+            var employee=_manager.GetById(id);
+            if(employee is null)
+             return NotFound();
+
+            var model = new ViewEmployee()
+            {
+                Id = employee.Id,
+                Name = employee.Name,
+                Famaly = employee.Famaly,
+                Age = employee.Age,
+                Post = employee.Post
+            };
             return View(model);
         }
         [HttpPost]
-        public IActionResult Delete(Employee model)
+        public IActionResult DeleteConf(int id)
         {
-            _manager.Delete(model);
-            return View();
+            _manager.Delete(id);
+            return RedirectToAction("GetAll");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

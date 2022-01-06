@@ -30,7 +30,10 @@
         {
             <tr>
                 <td>
-                    @item.Name
+                    <a asp-action="Delete" asp-route-id="@item.Id">
+                        @item.Name
+                    </a>
+                    
                 </td>
                 <td>
                     @item.Famaly

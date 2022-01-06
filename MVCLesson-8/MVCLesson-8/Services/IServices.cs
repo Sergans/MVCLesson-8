@@ -9,7 +9,8 @@ namespace MVCLesson_8.Services
    public interface IServices
     {
         void Add(Employee employee);
+        Employee GetById(int id);
         List<Employee>GetAll();
-        void Delete(Employee employee);
+        void Delete(int id);
     }
 }

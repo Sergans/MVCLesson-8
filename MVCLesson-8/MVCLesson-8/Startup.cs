@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MVCLesson_8.Services;
+using MVCLesson_8.Data;
 
 namespace MVCLesson_8
 {
@@ -22,6 +23,7 @@ namespace MVCLesson_8
             services.AddControllersWithViews();
             services.AddSingleton<ListEmployee>();
             services.AddScoped<Manager>();
+            services.AddSingleton<DataBase>();
            // services.AddSwaggerGen();
         }
 
