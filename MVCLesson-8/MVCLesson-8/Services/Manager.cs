@@ -49,16 +49,17 @@ namespace MVCLesson_8.Services
             return null;
         }
 
-        public void Update(Employee employee)
+        public void Update(int id,string name,string famaly,int age,string post)
         {
-            //var employee= GetById(id);
-            //employee.Name = name;
-            //employee.Age = age;
-            //employee.Post = post;
-            //employee.Famaly = famaly;
-            _database. (employee);
-            _database.SaveChanges();
-
+            foreach(var employee in GetAll())
+            {
+                employee.Name = name;
+                employee.Age = age;
+                employee.Post = post;
+                employee.Famaly = famaly;
+               _database.SaveChanges();
+            }
+           
         }
     }
 }

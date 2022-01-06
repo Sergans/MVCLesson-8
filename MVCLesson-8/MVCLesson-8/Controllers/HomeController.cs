@@ -60,10 +60,10 @@ namespace MVCLesson_8.Controllers
 
         }
         [HttpPost]
-        public IActionResult Edit(Employee model)
+        public IActionResult Edit(int id, string name, string famaly, int age, string post)
         {
-            _manager.Update(model);
-            return View();
+            _manager.Update(id,name,famaly,age,post);
+            return RedirectToAction("GetAll");
         }
         public IActionResult Delete(int id)
         {
