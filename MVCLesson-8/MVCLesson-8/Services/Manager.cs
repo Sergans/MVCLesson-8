@@ -29,11 +29,7 @@ namespace MVCLesson_8.Services
             _database.Remove(employee);
             _database.SaveChanges();
         }
-        public Employee GetFamaly(Employee employee)
-        {
-            return employee;
-        }
-
+       
         public List<Employee> GetAll()
         {
             
@@ -51,6 +47,18 @@ namespace MVCLesson_8.Services
                 }
             }
             return null;
+        }
+
+        public void Update(Employee employee)
+        {
+            //var employee= GetById(id);
+            //employee.Name = name;
+            //employee.Age = age;
+            //employee.Post = post;
+            //employee.Famaly = famaly;
+            _database. (employee);
+            _database.SaveChanges();
+
         }
     }
 }

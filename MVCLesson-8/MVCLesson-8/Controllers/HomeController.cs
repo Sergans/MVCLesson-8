@@ -41,12 +41,28 @@ namespace MVCLesson_8.Controllers
             _manager.Add(model);
             return View();
         }
-        public IActionResult Edit()
+        public IActionResult Edit(int id)
         {
-            return View();
+            var employee = _manager.GetById(id);
+            if (employee is null)
+                return NotFound();
+
+            var model = new ViewEmployee()
+            {
+                Id = employee.Id,
+                Name = employee.Name,
+                Famaly = employee.Famaly,
+                Age = employee.Age,
+                Post = employee.Post
+            };
+
+            return View(model);
+
         }
+        [HttpPost]
         public IActionResult Edit(Employee model)
         {
+            _manager.Update(model);
             return View();
         }
         public IActionResult Delete(int id)

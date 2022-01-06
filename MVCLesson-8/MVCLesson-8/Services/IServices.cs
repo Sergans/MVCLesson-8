@@ -12,5 +12,6 @@ namespace MVCLesson_8.Services
         Employee GetById(int id);
         List<Employee>GetAll();
         void Delete(int id);
+        void Update(Employee employee);
     }
 }
