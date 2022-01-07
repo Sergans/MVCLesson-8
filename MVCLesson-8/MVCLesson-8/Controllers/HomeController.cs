@@ -87,6 +87,11 @@ namespace MVCLesson_8.Controllers
             _manager.Delete(id);
             return RedirectToAction("GetAll");
         }
+        public IActionResult Details(int id)
+        {
+            var employee = _manager.GetById(id);
+            return View(employee);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -53,11 +53,15 @@ namespace MVCLesson_8.Services
         {
             foreach(var employee in GetAll())
             {
-                employee.Name = name;
-                employee.Age = age;
-                employee.Post = post;
-                employee.Famaly = famaly;
-               _database.SaveChanges();
+                if(employee.Id == id)
+                {
+                    employee.Name = name;
+                    employee.Age = age;
+                    employee.Post = post;
+                    employee.Famaly = famaly;
+                    _database.SaveChanges();
+                }
+              
             }
            
         }
