@@ -28,8 +28,8 @@ namespace MVCLesson_8.Controllers
 
         public IActionResult GetAll()
         {
-            var ls = _manager.GetAll();
-            return View(ls);
+            var employees = _manager.GetAll();
+            return View(employees);
         }
         public IActionResult Create()
         {
@@ -38,8 +38,17 @@ namespace MVCLesson_8.Controllers
         [HttpPost]
         public IActionResult Create(Employee model)
         {
-            _manager.Add(model);
-            return View();
+            if (ModelState.IsValid)
+            {
+                _manager.Add(model);
+                return View();
+                
+            }
+            else
+            {
+                return View(model);
+            }
+           
         }
         public IActionResult Edit(int id)
         {
@@ -55,15 +64,24 @@ namespace MVCLesson_8.Controllers
                 Age = employee.Age,
                 Post = employee.Post
             };
-
             return View(model);
 
         }
         [HttpPost]
-        public IActionResult Edit(int id, string name, string famaly, int age, string post)
+        public IActionResult Edit(Employee model)
         {
-            _manager.Update(id,name,famaly,age,post);
-            return RedirectToAction("GetAll");
+            
+            if (ModelState.IsValid)
+            {
+                _manager.Update(model);
+                return RedirectToAction("GetAll");
+            }
+            else
+            {
+                return View();
+            }
+            
+           
         }
         public IActionResult Delete(int id)
         {

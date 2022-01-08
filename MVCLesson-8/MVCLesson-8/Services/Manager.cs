@@ -49,16 +49,16 @@ namespace MVCLesson_8.Services
             return null;
         }
 
-        public void Update(int id,string name,string famaly,int age,string post)
+        public void Update(Employee model)
         {
             foreach(var employee in GetAll())
             {
-                if(employee.Id == id)
+                if(employee.Id == model.Id)
                 {
-                    employee.Name = name;
-                    employee.Age = age;
-                    employee.Post = post;
-                    employee.Famaly = famaly;
+                    employee.Name =model.Name;
+                    employee.Age = model.Age;
+                    employee.Post =model.Post;
+                    employee.Famaly = model.Famaly;
                     _database.SaveChanges();
                 }
               
