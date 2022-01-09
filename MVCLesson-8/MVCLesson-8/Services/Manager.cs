@@ -9,8 +9,6 @@ namespace MVCLesson_8.Services
 {
     public class Manager : IServices
     {
-       
-        private readonly ListEmployee _employees;
         private readonly DataBase _database;
         
         public Manager(DataBase dataBase)
@@ -32,7 +30,6 @@ namespace MVCLesson_8.Services
        
         public List<Employee> GetAll()
         {
-            
             return _database.Employees.ToList();
         }
 

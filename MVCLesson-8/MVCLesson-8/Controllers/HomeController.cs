@@ -80,7 +80,6 @@ namespace MVCLesson_8.Controllers
             {
                 return View();
             }
-            
            
         }
         public IActionResult Delete(int id)

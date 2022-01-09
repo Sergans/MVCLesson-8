@@ -21,7 +21,6 @@ namespace MVCLesson_8
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSingleton<ListEmployee>();
             services.AddScoped<Manager>();
             services.AddSingleton<DataBase>();
            // services.AddSwaggerGen();
