@@ -13,10 +13,12 @@ namespace MVCLesson_8.Models
         [HiddenInput(DisplayValue =false)]
         public int Id { get; set; }
        [Required]
+       
         public string Name { get; set; }
         [Required]
         public string Famaly { get; set; }
         [Required]
+        
         public int Age { get; set; }
         [Required]
         public string Post { get; set; }
