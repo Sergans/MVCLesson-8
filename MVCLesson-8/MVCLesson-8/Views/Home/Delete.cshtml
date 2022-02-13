@@ -1,0 +1,45 @@
+﻿@model MVCLesson_8.ViewModels.ViewEmployee
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Удаление сотрудника</h1>
+
+<h3>Уверены что хотите удалить данного сотрудника?</h3>
+<div>
+    
+    <hr />
+    <dl class="row">
+       
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Famaly)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Famaly)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Post)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Post)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteConf" asp-route-id="@Model.Id">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

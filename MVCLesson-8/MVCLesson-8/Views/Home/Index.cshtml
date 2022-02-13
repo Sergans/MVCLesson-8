@@ -1,0 +1,14 @@
+﻿@using MVCLesson_8.Data
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    DataBase db = new DataBase();
+    var count= db.Employees.ToList().Count;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Организация ООО</h1>
+    <h2>Число сотрудников: @count</h2>
+    
+</div>
